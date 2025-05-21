@@ -31,11 +31,21 @@ return {
       white = "#cad3f5",
     }
 
+    local function recording_status()
+      local reg = vim.fn.reg_recording()
+      if reg == "" then
+        return ""
+      else
+        return "Recording @" .. reg
+      end
+    end
+
     local bubbles_theme = {
       normal = {
         a = { fg = colors.black, bg = colors.violet },
         b = { fg = colors.white, bg = colors.grey },
         c = { fg = colors.white, bg = colors.black },
+        x = { fg = colors.black, bg = colors.red },
       },
 
       insert = { a = { fg = colors.black, bg = colors.blue } },
@@ -52,6 +62,7 @@ return {
     local opts = {
       options = {
         theme = bubbles_theme,
+        disabled_filetypes = { statusline = { "snacks_dashboard" } },
         component_separators = "",
         section_separators = { left = "", right = "" },
         always_show_tabline = false,
@@ -62,7 +73,7 @@ return {
         lualine_c = {
           "%=", --[[ add your center components here in place of this comment ]]
         },
-        lualine_x = {},
+        lualine_x = { { recording_status, separator = { left = "" }, right_padding = 2 } },
         lualine_y = { "filetype", "progress" },
         lualine_z = {
           { "location", separator = { right = "" }, left_padding = 2 },
