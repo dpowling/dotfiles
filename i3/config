@@ -22,9 +22,7 @@ exec_always --no-startup-id xrandr \
   --output DP-2 --mode 2560x1440 --scale 1.8x1.8 --rate 74.78 --pos 4608x0
 
 # Replace the i3 status bar
-# exec_always --no-startup-id killall polybar
-exec --no-startup-id polybar
-# exec_always --no-startup-id ~/.config/polybar/launch_polybar.sh
+exec --no-startup-id ~/.config/polybar/launch_polybar.sh
 
 # Background image
 exec_always --no-startup-id feh --bg-scale ~/Pictures/backgrounds/yosemite.png
@@ -33,6 +31,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/backgrounds/yosemite.png
 exec --no-startup-id picom
 
 gaps inner 8px
+gaps top 30px
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -215,6 +214,7 @@ bindsym $mod+r mode "resize"
 # This is what is hiding the gross title bar on the top of windows
 # I like this, looks more Hyprlandy
 for_window [class="^.*"] border pixel 3
+
 
 set $rosewater #f4dbd6
 set $flamingo #f0c6c6
