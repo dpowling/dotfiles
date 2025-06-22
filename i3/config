@@ -32,7 +32,7 @@ exec_always --no-startup-id feh --bg-scale ~/Pictures/backgrounds/yosemite.png
 # Window compositor so it's not janky and can customise etc.
 exec --no-startup-id picom
 
-# gaps inner 5px
+gaps inner 8px
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -211,6 +211,10 @@ bindsym $mod+r mode "resize"
 # bar {
 #         status_command i3status
 # }
+
+# This is what is hiding the gross title bar on the top of windows
+# I like this, looks more Hyprlandy
+for_window [class="^.*"] border pixel 3
 
 set $rosewater #f4dbd6
 set $flamingo #f0c6c6
