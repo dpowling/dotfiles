@@ -21,14 +21,25 @@ return {
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
+    -- Catppuccin machiato
+    -- local colors = {
+    --   blue = "#8aadf4",
+    --   cyan = "#8bd5ca",
+    --   black = "#24273a",
+    --   grey = "#5b6078",
+    --   red = "#ed8796",
+    --   violet = "#c6a0f6",
+    --   white = "#cad3f5",
+    -- }
+
     local colors = {
-      blue = "#8aadf4",
-      cyan = "#8bd5ca",
-      black = "#24273a",
-      grey = "#5b6078",
-      red = "#ed8796",
-      violet = "#c6a0f6",
-      white = "#cad3f5",
+      blue = "#458588",
+      cyan = "#689d6a",
+      black = "#282828",
+      grey = "#928374",
+      red = "#cc241d",
+      violet = "#b16286",
+      white = "#ebdbb2",
     }
 
     local function recording_status()
