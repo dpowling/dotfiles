@@ -17,9 +17,7 @@ set $sup Mod4
 
 exec --no-startup-id xrdb -merge ~/.Xresources
 # exec --no-startup-id xrandr --output DP-4 --mode 3840x2160 --scale 1.2x1.2 --rate 119.88 --primary --left-of DP-2 --output DP-2 --mode 2560x1440 --scale 1.8x1.8 --rate 74.78
-exec_always --no-startup-id xrandr \
-  --output DP-4 --mode 3840x2160 --scale 1.2x1.2 --rate 119.88 --primary --pos 0x0 \
-  --output DP-2 --mode 2560x1440 --scale 1.8x1.8 --rate 74.78 --pos 4608x0
+exec_always --no-startup-id ~/dotfiles/scripts/setup_monitors.sh
 
 # Replace the i3 status bar
 exec --no-startup-id ~/.config/polybar/launch_polybar.sh
