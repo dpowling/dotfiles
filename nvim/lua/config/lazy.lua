@@ -57,3 +57,31 @@ require("lazy").setup({
     },
   },
 })
+
+-- find godot project root
+local function find_godot_root()
+  local cwd = vim.fn.getcwd()
+  local current = cwd
+  
+  while current ~= "/" do
+    local project_file = current .. "/project.godot"
+    if vim.uv.fs_stat(project_file) then
+      return current
+    end
+    current = vim.fn.fnamemodify(current, ":h")
+  end
+  return nil
+end
+
+local godot_project_path = find_godot_root()
+local is_godot_project = godot_project_path ~= nil
+
+-- check if server is already running in godot project path
+if is_godot_project then
+  local server_pipe = godot_project_path .. "/server.pipe"
+  local is_server_running = vim.uv.fs_stat(server_pipe)
+  -- start server, if not already running
+  if not is_server_running then
+    vim.fn.serverstart(server_pipe)
+  end
+end
