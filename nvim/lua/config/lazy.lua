@@ -62,7 +62,6 @@ require("lazy").setup({
 local function find_godot_root()
   local cwd = vim.fn.getcwd()
   local current = cwd
-  
   while current ~= "/" do
     local project_file = current .. "/project.godot"
     if vim.uv.fs_stat(project_file) then
