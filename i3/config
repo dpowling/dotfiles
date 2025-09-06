@@ -220,6 +220,7 @@ bindsym $mod+r mode "resize"
 # This is what is hiding the gross title bar on the top of windows
 # I like this, looks more Hyprlandy
 for_window [class="^.*"] border pixel 3
+for_window [instance="Godot_Engine"] floating enable
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
