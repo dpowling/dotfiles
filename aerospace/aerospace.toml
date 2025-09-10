@@ -173,5 +173,5 @@ alt-shift-l = ['join-with right', 'mode main']
 
 [workspace-to-monitor-force-assignment]
 # Case insensitive regex match
-    9 = '^built-in retina display$'
-    10 = '^built-in retina display$'
+    9 = 'secondary'
+    10 = 'secondary'
