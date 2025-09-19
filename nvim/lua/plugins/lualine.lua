@@ -21,27 +21,43 @@ return {
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
-    -- Catppuccin machiato
-    local colors = {
-      blue = "#8aadf4",
-      cyan = "#8bd5ca",
-      black = "#24273a",
-      grey = "#5b6078",
-      red = "#ed8796",
-      violet = "#c6a0f6",
-      white = "#cad3f5",
-    }
+    local colorscheme = vim.g.colors_name or "default"
+    local colors
 
-    -- Gruvbox
-    -- local colors = {
-    --   blue = "#458588",
-    --   cyan = "#689d6a",
-    --   black = "#282828",
-    --   grey = "#928374",
-    --   red = "#cc241d",
-    --   violet = "#b16286",
-    --   white = "#ebdbb2",
-    -- }
+    if colorscheme:match("catppuccin") then
+      -- Catppuccin machiato
+      colors = {
+        blue = "#8aadf4",
+        cyan = "#8bd5ca",
+        black = "#24273a",
+        grey = "#5b6078",
+        red = "#ed8796",
+        violet = "#c6a0f6",
+        white = "#cad3f5",
+      }
+    elseif colorscheme:match("gruvbox") then
+      -- Gruvbox
+      colors = {
+        blue = "#458588",
+        cyan = "#689d6a",
+        black = "#282828",
+        grey = "#928374",
+        red = "#cc241d",
+        violet = "#b16286",
+        white = "#ebdbb2",
+      }
+    else
+      -- Default fallback colors
+      colors = {
+        blue = "#458588",
+        cyan = "#689d6a",
+        black = "#282828",
+        grey = "#928374",
+        red = "#cc241d",
+        violet = "#b16286",
+        white = "#ebdbb2",
+      }
+    end
 
     local function recording_status()
       local reg = vim.fn.reg_recording()

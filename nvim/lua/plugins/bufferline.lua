@@ -1,9 +1,18 @@
 return {
   "akinsho/bufferline.nvim",
-  init = function()
-    local bufline = require("catppuccin.groups.integrations.bufferline")
-    function bufline.get()
-      return bufline.get_theme()
+  opts = function()
+    local colorscheme = vim.g.colors_name or "default"
+
+    if colorscheme:match("catppuccin") then
+      return {
+        highlights = require("catppuccin.groups.integrations.bufferline").get(),
+      }
+    elseif colorscheme:match("gruvbox") then
+      return {
+        highlights = require("gruvbox").bufferline and require("gruvbox").bufferline() or {},
+      }
+    else
+      return {}
     end
   end,
 }
