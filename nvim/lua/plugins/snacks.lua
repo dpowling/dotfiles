@@ -53,17 +53,5 @@ return {
         desc = "Projects",
       },
     },
-    notifier = {
-      enabled = true,
-      timeout = 3000, -- default timeout in ms
-      width = { min = 40, max = 0.4 },
-      height = { min = 1, max = 0.6 },
-      -- Position configuration
-      top_down = false, -- show notifications from bottom to top
-      style = "compact", -- or "fancy"
-      -- Set position to bottom center
-      margin = { top = 0, right = 110, bottom = 0 },
-      -- Configure the position
-    },
   },
 }
