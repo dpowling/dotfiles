@@ -99,16 +99,13 @@ return {
             },
           },
         },
-      },
-      gdscript = {
-        mason = false,
+        gdscript = {
+          mason = false,
+        },
       },
       setup = {
         gdscript = function(_, opts)
           local is_godot_project = require("lspconfig.util").root_pattern("project.godot")
-          if is_godot_project then
-            print("We're in the project")
-          end
           if is_godot_project(vim.fn.getcwd()) then
             require("lspconfig").gdscript.setup(opts)
             return true
