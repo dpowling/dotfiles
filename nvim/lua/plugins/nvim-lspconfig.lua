@@ -99,9 +99,6 @@ return {
             },
           },
         },
-        gdscript = {
-          mason = false,
-        },
       },
       setup = {},
     }
@@ -109,39 +106,6 @@ return {
   end,
   ---@param opts PluginLspOpts
   config = vim.schedule_wrap(function(_, opts)
-    -- Set up Godot LSP autocommands here
-    print("DEBUG: Setting up Godot LSP autocommands in config")
-
-    local function start_godot_lsp()
-      local root = vim.fs.root(0, { "project.godot" })
-      if not root then
-        return
-      end
-
-      -- Check if gdscript LSP is already running for this buffer
-      local clients = vim.lsp.get_clients({ name = 'gdscript' })
-      for _, client in ipairs(clients) do
-        if client.root_dir == root then
-          return -- Already running
-        end
-      end
-
-      vim.lsp.start({
-        name = 'gdscript',
-        cmd = vim.lsp.rpc.connect('127.0.0.1', 6005),
-        root_dir = root,
-        filetypes = { "gdscript" },
-      })
-    end
-
-    vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "BufRead", "BufNewFile", "BufWinEnter" }, {
-      pattern = { "gdscript", "*.gd" },
-      callback = function()
-        if vim.bo.filetype == "gdscript" or vim.fn.expand("%:e") == "gd" then
-          vim.defer_fn(start_godot_lsp, 100) -- Small delay to ensure buffer is fully loaded
-        end
-      end,
-    })
     -- setup autoformat
     LazyVim.format.register(LazyVim.lsp.formatter())
 
