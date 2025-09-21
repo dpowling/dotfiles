@@ -268,7 +268,7 @@ disable_ligatures never
 
 #: Text cursor customization {{{
 
-# cursor #cccccc
+# cursor #FF10F0
 
 #: Default text cursor color. If set to the special value none the
 #: cursor will be rendered with a "reverse video" effect. Its color
@@ -314,7 +314,7 @@ disable_ligatures never
 
 #: The thickness of the underline cursor (in pts).
 
-# cursor_blink_interval -1
+cursor_blink_interval 0.5
 
 #: The interval to blink the cursor (in seconds). Set to zero to
 #: disable blinking. Negative values mean use system default. Note
@@ -335,7 +335,7 @@ disable_ligatures never
 #: Stop blinking cursor after the specified number of seconds of
 #: keyboard inactivity. Set to zero to never stop blinking.
 
-# cursor_trail 1
+cursor_trail 1
 
 #: Set this to a value larger than zero to enable a "cursor trail"
 #: animation. This is an animation that shows a "trail" following the
@@ -2107,6 +2107,10 @@ allow_remote_control yes
 # map kitty_mod+c copy_to_clipboard
 # map cmd+c       copy_to_clipboard
 
+map kitty_mod+shift+f show_scrollback
+map cmd+shift+f show_scrollback
+
+scrollback_lines 10000
 #::  There is also a copy_or_interrupt action that can be optionally
 #::  mapped to Ctrl+C. It will copy only if there is a selection and
 #::  send an interrupt otherwise. Similarly,
@@ -2695,7 +2699,8 @@ map kitty_mod+plus   change_font_size all +2.0
 #: Reload kitty.conf
 
 # map kitty_mod+f5 load_config_file
-# map ctrl+cmd+,   load_config_file
+map ctrl+shift+f5 load_config_file
+map cmd+shift+f5 load_config_file
 
 #::  Reload kitty.conf, applying any changes since the last time it
 #::  was loaded. Note that a handful of options cannot be dynamically
@@ -2777,7 +2782,7 @@ map kitty_mod+plus   change_font_size all +2.0
 
 
 # BEGIN_KITTY_THEME
-# Gruvbox Dark
+# Catppuccin-Macchiato
 include current-theme.conf
 # END_KITTY_THEME
 
