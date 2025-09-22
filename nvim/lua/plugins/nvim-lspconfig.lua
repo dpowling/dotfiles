@@ -99,6 +99,9 @@ return {
             },
           },
         },
+        bicep = {
+          mason = true,
+        },
       },
       setup = {},
     }

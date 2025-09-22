@@ -49,6 +49,7 @@ return {
       "yaml",
       "gdscript",
       "godot_resource",
+      "bicep",
       "gdshader",
     },
   },
