@@ -5,6 +5,14 @@ return {
     "mason.nvim",
     { "mason-org/mason-lspconfig.nvim", config = function() end },
   },
+  init = function()
+    -- Register bicep filetype
+    vim.filetype.add({
+      extension = {
+        bicep = "bicep",
+      },
+    })
+  end,
   opts = function()
     ---@class PluginLspOpts
     local ret = {
