@@ -22,7 +22,8 @@ require("lazy").setup({
       import = "lazyvim.plugins",
       opts = {
         -- colorscheme = "eldritch",
-        colorscheme = "gruvbox",
+        -- colorscheme = "gruvbox",
+        colorscheme = "catppuccin",
       },
     },
     -- import/override with your plugins

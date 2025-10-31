@@ -1,5 +1,8 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
+# OS-specific overrides (loaded at the end)
+# globinclude will be added at the bottom of this file
+
 #: Fonts {{{
 
 #: kitty has very powerful font management. You can configure
@@ -2782,7 +2785,7 @@ map cmd+shift+f5 load_config_file
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Macchiato
+# Gruvbox Dark
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -2793,3 +2796,6 @@ bold_font        auto
 italic_font      auto
 bold_italic_font auto
 # END_KITTY_FONTS
+
+# Load OS-specific configuration
+globinclude darwin.conf
