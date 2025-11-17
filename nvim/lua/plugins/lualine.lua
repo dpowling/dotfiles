@@ -35,16 +35,16 @@ return {
         violet = "#c6a0f6",
         white = "#cad3f5",
       }
-    elseif colorscheme:match("gruvbox") then
+    elseif colorscheme:match("everforest") then
       -- Gruvbox
       colors = {
-        blue = "#458588",
-        cyan = "#689d6a",
-        black = "#282828",
-        grey = "#928374",
-        red = "#cc241d",
-        violet = "#b16286",
-        white = "#ebdbb2",
+        blue = "#7FBBB3",
+        cyan = "#83C092",
+        black = "#2D353B",
+        grey = "#7A8478",
+        red = "#E67E80",
+        violet = "#D699B6",
+        white = "#D3C6AA",
       }
     else
       -- Default fallback colors

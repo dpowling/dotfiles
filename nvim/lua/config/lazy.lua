@@ -23,7 +23,7 @@ require("lazy").setup({
       opts = {
         -- colorscheme = "eldritch",
         -- colorscheme = "gruvbox",
-        colorscheme = "catppuccin",
+        colorscheme = "everforest",
       },
     },
     -- import/override with your plugins
