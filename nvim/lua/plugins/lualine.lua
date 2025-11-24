@@ -21,43 +21,43 @@ return {
     local lualine_require = require("lualine_require")
     lualine_require.require = require
 
-    local colorscheme = vim.g.colors_name or "default"
-    local colors
-
-    if colorscheme:match("catppuccin") then
-      -- Catppuccin machiato
-      colors = {
-        blue = "#8aadf4",
-        cyan = "#8bd5ca",
-        black = "#24273a",
-        grey = "#5b6078",
-        red = "#ed8796",
-        violet = "#c6a0f6",
-        white = "#cad3f5",
-      }
-    elseif colorscheme:match("everforest") then
-      -- Gruvbox
-      colors = {
-        blue = "#7FBBB3",
-        cyan = "#83C092",
-        black = "#2D353B",
-        grey = "#7A8478",
-        red = "#E67E80",
-        violet = "#D699B6",
-        white = "#D3C6AA",
-      }
-    else
-      -- Default fallback colors
-      colors = {
-        blue = "#458588",
-        cyan = "#689d6a",
-        black = "#282828",
-        grey = "#928374",
-        red = "#cc241d",
-        violet = "#b16286",
-        white = "#ebdbb2",
-      }
-    end
+    -- local colorscheme = vim.g.colors_name or "default"
+    -- local colors
+    --
+    -- if colorscheme:match("catppuccin") then
+    --   -- Catppuccin machiato
+    --   colors = {
+    --     blue = "#8aadf4",
+    --     cyan = "#8bd5ca",
+    --     black = "#24273a",
+    --     grey = "#5b6078",
+    --     red = "#ed8796",
+    --     violet = "#c6a0f6",
+    --     white = "#cad3f5",
+    --   }
+    -- elseif colorscheme:match("everforest") then
+    --   -- Gruvbox
+    --   colors = {
+    --     blue = "#7FBBB3",
+    --     cyan = "#83C092",
+    --     black = "#2D353B",
+    --     grey = "#7A8478",
+    --     red = "#E67E80",
+    --     violet = "#D699B6",
+    --     white = "#D3C6AA",
+    --   }
+    -- else
+    --   -- Default fallback colors
+    --   colors = {
+    --     blue = "#458588",
+    --     cyan = "#689d6a",
+    --     black = "#282828",
+    --     grey = "#928374",
+    --     red = "#cc241d",
+    --     violet = "#b16286",
+    --     white = "#ebdbb2",
+    --   }
+    -- end
 
     local function recording_status()
       local reg = vim.fn.reg_recording()
@@ -68,28 +68,28 @@ return {
       end
     end
 
-    local bubbles_theme = {
-      normal = {
-        a = { fg = colors.black, bg = colors.violet },
-        b = { fg = colors.white, bg = colors.grey },
-        c = { fg = colors.white, bg = colors.black },
-        x = { fg = colors.black, bg = colors.red },
-      },
-
-      insert = { a = { fg = colors.black, bg = colors.blue } },
-      visual = { a = { fg = colors.black, bg = colors.cyan } },
-      replace = { a = { fg = colors.black, bg = colors.red } },
-
-      inactive = {
-        a = { fg = colors.white, bg = colors.black },
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white, bg = colors.black },
-      },
-    }
+    -- local bubbles_theme = {
+    --   normal = {
+    --     a = { fg = colors.black, bg = colors.violet },
+    --     b = { fg = colors.white, bg = colors.grey },
+    --     c = { fg = colors.white, bg = colors.black },
+    --     x = { fg = colors.black, bg = colors.red },
+    --   },
+    --
+    --   insert = { a = { fg = colors.black, bg = colors.blue } },
+    --   visual = { a = { fg = colors.black, bg = colors.cyan } },
+    --   replace = { a = { fg = colors.black, bg = colors.red } },
+    --
+    --   inactive = {
+    --     a = { fg = colors.white, bg = colors.black },
+    --     b = { fg = colors.white, bg = colors.black },
+    --     c = { fg = colors.white, bg = colors.black },
+    --   },
+    -- }
 
     local opts = {
       options = {
-        theme = bubbles_theme,
+        -- theme = bubbles_theme,
         disabled_filetypes = { statusline = { "snacks_dashboard" } },
         component_separators = "",
         section_separators = { left = "", right = "" },
