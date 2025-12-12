@@ -3,6 +3,9 @@
 -- Add any additional keymaps here
 local map = LazyVim.safe_keymap_set
 
+-- Exit insert mode with jj
+map("i", "jj", "<Esc>", { desc = "Exit insert mode", noremap = true })
+
 -- Hold Tab and tap l/h repeatedly to cycle tabs
 map("n", "<Tab>", "", { desc = "Tab prefix" })
 map("n", "<Tab>l", "<cmd>tabnext<cr>", { desc = "Next Tab", noremap = true })
