@@ -208,6 +208,7 @@ tooltip {
 }
 #mpris,
 #custom-vibemode {
+  margin: 0px 10px;
   color: white;
   animation: vibe 4s ease-in-out infinite;
 }
