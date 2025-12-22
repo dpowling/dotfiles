@@ -206,19 +206,27 @@ tooltip {
   color: #e4c9af;
   margin: 0px 10px 0px 0px;
 }
-#mpris {
+#mpris,
+#custom-vibemode {
   color: white;
-  animation: repeat;
-  animation-name: blink;
-  animation-duration: 3s;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
+  animation: vibe 4s ease-in-out infinite;
 }
 
-@keyframes blink {
-  to {
-    color: #4a4a4a;
+@keyframes vibe {
+  0% {
+    color: #a6d189;
+  }
+  25% {
+    color: #83c092;
+  }
+  50% {
+    color: #7fbbb3;
+  }
+  75% {
+    color: #d699b6;
+  }
+  100% {
+    color: #a6d189;
   }
 }
 #network {

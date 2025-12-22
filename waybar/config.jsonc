@@ -20,10 +20,11 @@
     "custom/smallspacer",
     "hyprland/workspaces",
     "custom/spacer",
-    "mpris",
+    "hyprland/window",
   ],
   "modules-center": [
-    "hyprland/window",
+    "custom/vibemode",
+    "mpris",
   ],
   "modules-right": [
     "custom/padd",
@@ -82,16 +83,29 @@
   "mpris": {
     "format": "{dynamic}",
     "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
-    "max-length": 30,
+    "format-stopped": "♪ ~ vibe mode ~ ♪",
+    "tooltip": false,
+    "max-length": 50,
     "player-icons": {
       "default": "⏸",
       "mpv": "🎵",
     },
     "status-icons": {
       "paused": "▶",
+      "stopped": "♪",
     },
+    "dynamic-order": ["title", "artist"],
+    "dynamic-len": 30,
     // "ignored-players": ["firefox"]
   },
+
+  "custom/vibemode": {
+    "exec": "playerctl status 2>/dev/null || echo '♪ ~ vibe mode ~ ♪'",
+    "exec-if": "! playerctl status 2>/dev/null",
+    "interval": 2,
+    "format": "{}",
+  },
+
   "tray": {
     "icon-size": 10,
     "rotate": 0,
