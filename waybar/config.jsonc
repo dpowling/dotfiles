@@ -22,10 +22,7 @@
     "custom/spacer",
     "hyprland/window",
   ],
-  "modules-center": [
-    "custom/vibemode",
-    "mpris",
-  ],
+  "modules-center": ["custom/vibemode", "mpris"],
   "modules-right": [
     "custom/padd",
     "custom/l_end",
@@ -100,9 +97,9 @@
   },
 
   "custom/vibemode": {
-    "exec": "playerctl status 2>/dev/null || echo '♪ ~ vibe mode ~ ♪'",
+    "exec": "~/.config/waybar/walking-cat.sh",
     "exec-if": "! playerctl status 2>/dev/null",
-    "interval": 2,
+    "interval": 1,
     "format": "{}",
   },
 
