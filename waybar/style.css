@@ -171,13 +171,13 @@ tooltip {
   padding-right: 4px;
 }
 #clock {
-  color: #a1bdce;
+  color: #e69875;
   font-size: 12px;
   font-weight: 900;
   font-family: "JetBrains Mono Nerd Font";
   background: rgba(23, 23, 23, 0);
   opacity: 1;
-  margin: 3px 0px 0px 0px;
+  margin: 0px 0px 0px 0px;
   padding-left: 10px;
   padding-right: 10px;
   border: none;
@@ -185,16 +185,16 @@ tooltip {
 #pulseaudio {
   font-weight: normal;
   font-size: 14px;
-  color: #6f8fdb;
+  color: #d3c6aa;
   background: rgba(22, 19, 32, 0);
   opacity: 1;
-  margin: 2px 10px 0px 0px;
+  margin: 0px 10px 0px 0px;
 }
 #cpu {
   padding: 5px;
   font-weight: normal;
   font-size: 18px;
-  color: #915caf;
+  color: #d3c6aa;
   margin: 0px 10px 0px 0px;
 }
 #custom-gpuinfo,
@@ -203,7 +203,7 @@ tooltip {
 #memory {
   font-weight: normal;
   font-size: 15px;
-  color: #e4c9af;
+  color: #d3c6aa;
   margin: 0px 10px 0px 0px;
 }
 #mpris,
@@ -230,7 +230,7 @@ tooltip {
   }
 }
 #network {
-  color: #a1bdce;
+  color: #e4c9af;
   font-weight: normal;
   font-size: 15px;
   margin: 0px 2px 0px 0px;
