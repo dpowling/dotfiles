@@ -6,13 +6,12 @@
   "layer": "top",
   "position": "top",
   "mod": "dock",
-  "margin-left": 10,
-  "margin-right": 10,
+  "margin-left": 8,
+  "margin-right": 8,
   "margin-top": 7,
   "margin-bottom": 0,
   "exclusive": true,
   "passthrough": false,
-  "gtk-layer-shell": true,
   "reload_style_on_change": true,
 
   // positions generated based on config.ctl //
@@ -24,11 +23,7 @@
     "mpris",
   ],
   "modules-center": [
-    "custom/padd",
-    "custom/l_end",
-    "custom/r_end",
     "hyprland/window",
-    "custom/padd",
   ],
   "modules-right": [
     "custom/padd",
@@ -77,22 +72,15 @@
   "custom/smallspacer": {
     "format": " ",
   },
-  "memory": {
-    "interval": 1,
-    "rotate": 270,
-    "format": "{icon}",
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
-    "max-length": 10,
-  },
   "cpu": {
-    "interval": 1,
-    "format": "{icon}",
-    "rotate": 270,
-    "format-icons": ["󰝦", "󰪞", "󰪟", "󰪠", "󰪡", "󰪢", "󰪣", "󰪤", "󰪥"],
+    "format": "󰻠",
+    "tooltip": true,
   },
-
+  "memory": {
+    "format": "",
+  },
   "mpris": {
-    "format": "{player_icon} {dynamic}",
+    "format": "{dynamic}",
     "format-paused": "<span color='grey'>{status_icon} {dynamic}</span>",
     "max-length": 30,
     "player-icons": {
@@ -168,13 +156,7 @@
   },
 
   "hyprland/workspaces": {
-    "format": "{icon}",
-    "format-icons": {
-      "default": "",
-      "active": "",
-      //"default": "○",
-      //"default": "●"
-    },
+    "format": "{name}",
   },
 
   "wlr/workspaces": {
@@ -223,40 +205,6 @@
     "tooltip": true,
   },
 
-  "custom/wbar": {
-    "format": "𐌏{}", //    //
-    "rotate": 0,
-    "exec": "echo ; echo show app menu",
-    "on-click": "wofi --show drun",
-    "on-click-right": "wbarconfgen.sh p",
-    "on-click-middle": "sleep 0.1 && quickapps.sh kitty firefox spotify code dolphin",
-    "interval": 86400,
-    "tooltip": true,
-  },
-
-  "custom/theme": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰟡 pick color",
-    "on-click": "hyprpicker",
-    "on-click-right": "themeswitch.sh -p",
-    "on-click-middle": "sleep 0.1 && themeselect.sh",
-    "interval": 86400, // once every day
-    "tooltip": true,
-  },
-
-  "custom/wallchange": {
-    "format": "{}",
-    "rotate": 0,
-    "exec": "echo ; echo 󰆊 switch wallpaper",
-    "on-click": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/skyway.jpg",
-    "on-click-right": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/cloud.png",
-    "on-click-middle": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/gradient.jpg",
-    "on-scroll-up": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/torvalds.png",
-    "on-scroll-down": "swww img --transition-type grow --transition-pos 0.071,0.988 --transition-step 255 --transition-fps 60 /home/anik/Downloads/night.png",
-    "interval": 86400, // once every day
-    "tooltip": true,
-  },
   "custom/mouse": {
     "format": "",
     "format-alt": "",
@@ -280,21 +228,6 @@
     "app_ids-mapping": {
       "firefoxdeveloperedition": "firefox-developer-edition",
     },
-  },
-
-  "custom/spotify": {
-    "exec": "mediaplayer.py --player spotify",
-    "format": " {}",
-    "rotate": 0,
-    "return-type": "json",
-    "on-click": "playerctl play-pause --player spotify",
-    "on-click-right": "playerctl next --player spotify",
-    "on-click-middle": "playerctl previous --player spotify",
-    "on-scroll-up": "volumecontrol.sh -p spotify i",
-    "on-scroll-down": "volumecontrol.sh -p spotify d",
-    "max-length": 25,
-    "escape": true,
-    "tooltip": true,
   },
 
   "idle_inhibitor": {

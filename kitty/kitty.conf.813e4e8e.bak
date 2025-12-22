@@ -2800,4 +2800,3 @@ bold_italic_font auto
 
 # Load OS-specific configuration
 globinclude darwin.conf
-map shift+enter send_text all \e\r
