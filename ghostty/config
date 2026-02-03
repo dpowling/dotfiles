@@ -51,3 +51,11 @@ keybind = shift+enter=text:\x1b\r
 
 keybind = ctrl+shift+h=previous_tab
 keybind = ctrl+shift+l=next_tab
+
+theme = Phala Green Dark
+
+window-padding-balance = true
+window-padding-x = 0
+window-padding-y = 0
+window-padding-color = extend
+

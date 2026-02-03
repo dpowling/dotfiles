@@ -22,15 +22,28 @@ return {
     lualine_require.require = require
 
     local colorscheme = vim.g.colors_name or "default"
-    local colors = {
-      blue = "#7FBBB3",
-      green = "#83C092",
-      black = "#272E33",
-      grey = "#7A8478",
-      red = "#E67E80",
-      violet = "#D699B6",
-      white = "#D3C6AA",
-    }
+    local colors
+    if colorscheme == "phala-green-dark" then
+      colors = {
+        blue = "#00b4c0",
+        green = "#c1fc03",
+        black = "#000000",
+        grey = "#1a261a",
+        red = "#ed2200",
+        violet = "#ed3aea",
+        white = "#c1fc03",
+      }
+    else
+      colors = {
+        blue = "#7FBBB3",
+        green = "#83C092",
+        black = "#272E33",
+        grey = "#7A8478",
+        red = "#E67E80",
+        violet = "#D699B6",
+        white = "#D3C6AA",
+      }
+    end
 
     local function recording_status()
       local reg = vim.fn.reg_recording()
