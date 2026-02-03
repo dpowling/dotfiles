@@ -27,7 +27,7 @@ return {
       colors = {
         blue = "#00b4c0",
         green = "#c1fc03",
-        black = "#000000",
+        black = "#111811",
         grey = "#1a261a",
         red = "#ed2200",
         violet = "#ed3aea",
