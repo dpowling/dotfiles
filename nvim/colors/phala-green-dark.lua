@@ -12,7 +12,8 @@ vim.o.background = "dark"
 
 local c = {
   -- Base
-  bg = "#000000",
+  -- bg = "#000000",
+  bg = "#111811", -- statusline, pmenu
   fg = "#c1fc03",
 
   -- UI backgrounds
