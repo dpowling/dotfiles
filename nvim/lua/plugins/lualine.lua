@@ -5,113 +5,98 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  -- init = function()
-  --   vim.g.lualine_laststatus = vim.o.laststatus
-  --   if vim.fn.argc(-1) > 0 then
-  --     -- set an empty statusline till lualine loads
-  --     vim.o.statusline = " "
-  --   else
-  --     -- hide the statusline on the starter page
-  --     vim.o.laststatus = 0
-  --   end
-  -- end,
 
-  opts = function()
-    -- PERF: we don't need this lualine require madness 🤷
-    local lualine_require = require("lualine_require")
-    lualine_require.require = require
+  config = function()
+    local lualine = require("lualine")
 
-    local colorscheme = vim.g.colors_name or "default"
-    local colors = {
-      blue = "#7FBBB3",
-      green = "#83C092",
-      black = "#272E33",
-      grey = "#7A8478",
-      red = "#E67E80",
-      violet = "#D699B6",
-      white = "#D3C6AA",
+    local palettes = {
+      everforest = {
+        accent  = "#83C092",
+        black   = "#272E33",
+        bg      = "#2E383C",
+        grey    = "#7A8478",
+        fg      = "#D3C6AA",
+        fg_dim  = "#7A8478",
+        insert  = "#D699B6",
+        visual  = "#7FBBB3",
+        replace = "#E67E80",
+        command = "#DBBC7F",
+      },
+      phosphor = {
+        accent  = "#5EC45E",
+        black   = "#0C1A0C",
+        bg      = "#111F11",
+        grey    = "#466046",
+        fg      = "#AECAAE",
+        fg_dim  = "#789878",
+        insert  = "#C440A0",
+        visual  = "#2EC4C8",
+        replace = "#D84E90",
+        command = "#CC7444",
+      },
     }
 
     local function recording_status()
       local reg = vim.fn.reg_recording()
-      if reg == "" then
-        return ""
-      else
+      if reg ~= "" then
         return "Recording @" .. reg
       end
+      return ""
     end
 
-    local bubbles_theme = {
-      normal = {
-        a = { fg = colors.black, bg = colors.green },
-        b = { fg = colors.white, bg = colors.grey },
-        c = { fg = colors.white, bg = colors.black },
-        x = { fg = colors.black, bg = colors.green },
-      },
-
-      insert = { a = { fg = colors.black, bg = colors.violet } },
-      visual = { a = { fg = colors.black, bg = colors.blue } },
-      replace = { a = { fg = colors.black, bg = colors.red } },
-
-      inactive = {
-        a = { fg = colors.white, bg = colors.black },
-        b = { fg = colors.white, bg = colors.black },
-        c = { fg = colors.white, bg = colors.black },
-      },
-    }
-
-    local opts = {
-      options = {
-        theme = bubbles_theme,
-        disabled_filetypes = { statusline = { "snacks_dashboard" } },
-        component_separators = "",
-        section_separators = { left = "", right = "" },
-        always_show_tabline = false,
-      },
-      sections = {
-        lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
-        lualine_b = { "filename", "branch" },
-        lualine_c = {
-          "%=", --[[ add your center components here in place of this comment ]]
+    local function build_theme(p)
+      return {
+        normal = {
+          a = { fg = p.black,  bg = p.accent },
+          b = { fg = p.fg,     bg = p.bg },
+          c = { fg = p.fg_dim, bg = p.black },
+          x = { fg = p.black,  bg = p.accent },
         },
-        lualine_x = { { recording_status, separator = { left = "" }, right_padding = 2 } },
-        lualine_y = { "filetype", "progress" },
-        lualine_z = {
-          { "location", separator = { right = "" }, left_padding = 2 },
+        insert  = { a = { fg = p.black, bg = p.insert } },
+        visual  = { a = { fg = p.black, bg = p.visual } },
+        replace = { a = { fg = p.black, bg = p.replace } },
+        command = { a = { fg = p.black, bg = p.command } },
+        inactive = {
+          a = { fg = p.grey, bg = p.black },
+          b = { fg = p.grey, bg = p.black },
+          c = { fg = p.grey, bg = p.black },
         },
-      },
-      inactive_sections = {
-        lualine_a = { "filename" },
-        lualine_b = {},
-        lualine_c = {},
-        lualine_x = {},
-        lualine_y = {},
-        lualine_z = { "location" },
-      },
-      tabline = {},
-      extensions = {},
-    }
+      }
+    end
 
-    -- do not add trouble symbols if aerial is enabled
-    -- And allow it to be overriden for some buffer types (see autocmds)
-    -- if vim.g.trouble_lualine and LazyVim.has("trouble.nvim") then
-    --   local trouble = require("trouble")
-    --   local symbols = trouble.statusline({
-    --     mode = "symbols",
-    --     groups = {},
-    --     title = false,
-    --     filter = { range = true },
-    --     format = "{kind_icon}{symbol.name:Normal}",
-    --     hl_group = "lualine_c_normal",
-    --   })
-    --   table.insert(opts.sections.lualine_c, {
-    --     symbols and symbols.get,
-    --     cond = function()
-    --       return vim.b.trouble_lualine ~= false and symbols.has()
-    --     end,
-    --   })
-    -- end
+    local function setup()
+      local p = palettes[vim.g.colors_name] or palettes.everforest
+      lualine.setup({
+        options = {
+          theme = build_theme(p),
+          disabled_filetypes = { statusline = { "snacks_dashboard" } },
+          component_separators = "",
+          section_separators = { left = "", right = "" },
+          always_show_tabline = false,
+        },
+        sections = {
+          lualine_a = { { "mode", separator = { left = "" }, right_padding = 2 } },
+          lualine_b = { "filename", "branch" },
+          lualine_c = { "%=" },
+          lualine_x = { { recording_status, separator = { left = "" }, right_padding = 2 } },
+          lualine_y = { "filetype", "progress" },
+          lualine_z = { { "location", separator = { right = "" }, left_padding = 2 } },
+        },
+        inactive_sections = {
+          lualine_a = { "filename" },
+          lualine_b = {},
+          lualine_c = {},
+          lualine_x = {},
+          lualine_y = {},
+          lualine_z = { "location" },
+        },
+        tabline = {},
+        extensions = {},
+      })
+    end
 
-    return opts
+    setup()
+
+    vim.api.nvim_create_autocmd("ColorScheme", { callback = setup })
   end,
 }
