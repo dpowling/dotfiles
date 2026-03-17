@@ -283,7 +283,7 @@ disable_ligatures never
 #: some themes set this value, so if you want to override it, place
 #: your value after the lines where the theme file is included.
 
-# cursor_text_color #111111
+# cursor_text_color #FF10F0
 
 #: The color of text under the cursor. If you want it rendered with
 #: the background color of the cell underneath instead, use the
@@ -946,7 +946,7 @@ cursor_trail 1
 #: suffix of "c" on the width/height values to have them interpreted
 #: as number of cells instead of pixels.
 
-# enabled_layouts *
+enabled_layouts *
 
 #: The enabled window layouts. A comma separated list of layout names.
 #: The special value all means all layouts. The first listed layout
@@ -2064,7 +2064,6 @@ allow_remote_control yes
 #: The full list of actions that can be mapped to key presses is
 #: available here <https://sw.kovidgoyal.net/kitty/actions/>.
 
-# kitty_mod ctrl+shift
 
 #: Special modifier key alias for default shortcuts. You can change
 #: the value of this option to alter all default shortcuts that use
@@ -2436,6 +2435,7 @@ map shift+ctrl+h    previous_tab
 #: arbitrary commands to run when using new_tab and new_tab_with_cwd.
 #: Finally, if you want the new tab to open next to the current tab
 #: rather than at the end of the tabs list, use::
+map ctrl+shift+t new_tab_with_cwd
 
 #:     map ctrl+t new_tab !neighbor [optional cmd to run]
 #: }}}
@@ -2444,13 +2444,14 @@ map shift+ctrl+h    previous_tab
 
 #: Next layout
 
-# map kitty_mod+l next_layout
+map ctrl+alt+n next_layout
+# map f1 toggle_layout tall
 
 
 #: You can also create shortcuts to switch to specific layouts::
 
-#:     map ctrl+alt+t goto_layout tall
-#:     map ctrl+alt+s goto_layout stack
+map ctrl+alt+t goto_layout tall
+map ctrl+alt+s goto_layout stack
 
 #: Similarly, to switch back to the previous layout::
 
@@ -2785,7 +2786,7 @@ map cmd+shift+f5 load_config_file
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Everforest Dark Hard
 include current-theme.conf
 # END_KITTY_THEME
 
@@ -2799,3 +2800,4 @@ bold_italic_font auto
 
 # Load OS-specific configuration
 globinclude darwin.conf
+map shift+enter send_text all \e\r
