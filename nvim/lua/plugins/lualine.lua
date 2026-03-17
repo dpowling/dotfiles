@@ -34,6 +34,30 @@ return {
         replace = "#D84E90",
         command = "#CC7444",
       },
+      moonfly = {
+        accent  = "#80a0ff",
+        black   = "#080808",
+        bg      = "#1c1c1c",
+        grey    = "#4e4e4e",
+        fg      = "#bdbdbd",
+        fg_dim  = "#4e4e4e",
+        insert  = "#8cc85f",
+        visual  = "#cf87e8",
+        replace = "#ff5454",
+        command = "#e3c78a",
+      },
+      vividchalk = {
+        accent  = "#fce94f",
+        black   = "#121212",
+        bg      = "#1c1c1c",
+        grey    = "#5f5f5f",
+        fg      = "#e8e8d3",
+        fg_dim  = "#5f5f5f",
+        insert  = "#99ad6a",
+        visual  = "#8fbfdc",
+        replace = "#cf6a4c",
+        command = "#e86820",
+      },
     }
 
     local function recording_status()
@@ -65,7 +89,7 @@ return {
     end
 
     local function setup()
-      local p = palettes[vim.g.colors_name] or palettes.everforest
+      local p = palettes[vim.g.colors_name] or palettes.moonfly
       lualine.setup({
         options = {
           theme = build_theme(p),
