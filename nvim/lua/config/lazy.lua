@@ -23,7 +23,8 @@ require("lazy").setup({
       opts = {
         -- colorscheme = "eldritch",
         -- colorscheme = "gruvbox",
-        colorscheme = "moonfly",
+        -- colorscheme = "moonfly",
+        colorscheme = "catppuccin",
       },
     },
     -- import/override with your plugins
