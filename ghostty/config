@@ -48,7 +48,44 @@
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
 theme = Catppuccin Mocha
+background-opacity = 0.9
+cursor-color = #FF00FF
+cursor-style-blink = true
+
 keybind = shift+enter=text:\x1b\r
 
 keybind = ctrl+shift+h=previous_tab
 keybind = ctrl+shift+l=next_tab
+
+# macOS specific remaps so neovim can do it's thing
+keybind = super+shift+h=previous_tab
+keybind = super+shift+l=next_tab
+keybind = super+shift+j=move_tab:1
+keybind = super+shift+k=move_tab:-1
+
+# movement of neovim windows
+keybind = super+h=text:\x08
+keybind = super+j=text:\x0A
+keybind = super+k=text:\x0B
+keybind = super+l=text:\x0C
+
+keybind = super+w=text:\x17
+keybind = super+c=text:\x03
+keybind = super+v=text:\x16
+keybind = super+z=text:\x1A
+keybind = super+s=text:\x13
+keybind = super+slash=text:\x1f
+keybind = super+n=text:\x0e
+keybind = super+p=text:\x10
+keybind = super+f=text:\x06
+keybind = super+b=text:\x02
+keybind = super+b=text:\x02
+keybind = super+space=text:\x00
+keybind = super+o=text:\x0f
+keybind = super+i=text:\x09
+keybind = super+r=text:\x12
+keybind = super+q=text:\x11
+
+# window management
+keybind = super+shift+t=new_tab
+keybind = super+shift+w=close_surface
