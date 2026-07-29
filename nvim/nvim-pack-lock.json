@@ -2,7 +2,8 @@
   "plugins": {
     "blink.cmp": {
       "rev": "4b18c32adef2898f95cdef6192cbd5796c1a332d",
-      "src": "https://github.com/saghen/blink.cmp"
+      "src": "https://github.com/saghen/blink.cmp",
+      "version": "1.0.0 - 2.0.0"
     },
     "blink.nvim": {
       "rev": "d1e7c7c45d45c6b6a25427bf62db4db73b03ff3d",
@@ -70,7 +71,8 @@
     },
     "nvim-dap": {
       "rev": "db321947bb289a2d4d76a32e76e4d2bd6103d7df",
-      "src": "https://github.com/mfussenegger/nvim-dap"
+      "src": "https://github.com/mfussenegger/nvim-dap",
+      "version": "'b516f20b487b0ac6a281e376dfac1d16b5040041'"
     },
     "nvim-dap-ui": {
       "rev": "cf91d5e2d07c72903d052f5207511bf7ecdb7122",
@@ -89,8 +91,9 @@
       "src": "https://github.com/nvim-neotest/nvim-nio"
     },
     "nvim-treesitter": {
-      "rev": "7caec274fd19c12b55902a5b795100d21531391f",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter"
+      "rev": "875515255192864c33981c3ed66ad94e561b904a",
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter",
+      "version": "'main'"
     },
     "nvim-treesitter-context": {
       "rev": "adf4b6b0420b7be6c717ef0ac7993183d6c201b1",
@@ -98,10 +101,11 @@
     },
     "nvim-treesitter-textobjects": {
       "rev": "93d60a475f0b08a8eceb99255863977d3a25f310",
-      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects"
+      "src": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+      "version": "'main'"
     },
     "nvim-web-devicons": {
-      "rev": "d7462543c9e366c0d196c7f67a945eaaf5d99414",
+      "rev": "737cf6c657898d0c697311d79d361288a1343d50",
       "src": "https://github.com/nvim-tree/nvim-web-devicons"
     },
     "plenary.nvim": {
