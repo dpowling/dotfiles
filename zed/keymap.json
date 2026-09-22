@@ -9,13 +9,14 @@
   {
     "context": "GitPanel",
     "bindings": {
-      "q": "git_panel::Close",
-    },
+      "q": "git_panel::Close"
+    }
   },
   // File panel (netrw)
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
+      "cmd-h": "workspace::ActivatePaneLeft",
       "a": "project_panel::NewFile",
       "A": "project_panel::NewDirectory",
       "r": "project_panel::Rename",
@@ -43,8 +44,8 @@
       "shift-g": "menu::SelectLast",
       "g g": "menu::SelectFirst",
       "-": "project_panel::SelectParent",
-      "ctrl-6": "pane::AlternateFile",
-    },
+      "ctrl-6": "pane::AlternateFile"
+    }
   },
   // Empty pane, set of keybindings that are available when there is no active editor
   {
@@ -59,22 +60,22 @@
       // Search in all the files
       "space s g": "workspace::NewSearch",
       // Quit zed
-      "space q q": "zed::Quit",
-    },
+      "space q q": "zed::Quit"
+    }
   },
   {
     "context": "Editor && vim_mode == insert",
     "bindings": {
-      "j j": "vim::SwitchToNormalMode",
+      "j j": "vim::SwitchToNormalMode"
     }
   },
   {
     "context": "Editor && vim_mode == normal",
     "bindings": {
-      "cmd-w h": "workspace::ActivatePaneLeft",
-      "cmd-w l": "workspace::ActivatePaneRight",
-      "cmd-w k": "workspace::ActivatePaneUp",
-      "cmd-w j": "workspace::ActivatePaneDown",
+      "cmd-h": "workspace::ActivatePaneLeft",
+      "cmd-l": "workspace::ActivatePaneRight",
+      "cmd-k": "workspace::ActivatePaneUp",
+      "cmd-j": "workspace::ActivatePaneDown",
       "cmd-w v": "pane::SplitRight",
       "cmd-w s": "pane::SplitDown",
       "cmd-w q": "pane::CloseActiveItem",
@@ -82,11 +83,11 @@
       "shift-l": "pane::ActivateNextItem",
       "cmd-o": "pane::GoBack",
       "cmd-i": "pane::GoForward",
-      "cmd-k": "editor::ShowSignatureHelp",
+      "space k": "editor::ShowSignatureHelp",
       "cmd-/": "terminal_panel::Toggle",
       "g d": "editor::GoToDefinition",
       "shift-v": "vim::SwitchToVisualLineMode",
-      "cmd-v": "vim::SwitchToVisualBlockMode",
+      "cmd-v": "vim::SwitchToVisualBlockMode"
     }
   },
   {
@@ -103,8 +104,8 @@
         "task::Spawn",
         {
           "task_name": "lazygit",
-          "reveal_target": "center",
-        },
+          "reveal_target": "center"
+        }
       ],
       "space g h d": "editor::ExpandAllDiffHunks",
       "space g h D": "git::Diff",
@@ -190,16 +191,16 @@
       "] q": "editor::MoveToStartOfNextExcerpt",
       "[ q": "editor::MoveToStartOfExcerpt",
       // Comments
-      "space g c": "vim::ToggleComments",
-    },
+      "space g c": "vim::ToggleComments"
+    }
   },
   {
     "context": "Editor && vim_mode == visual && !VimWaiting && !VimObject",
     "bindings": {
       // Line's Motions
       "shift-j": "editor::MoveLineDown",
-      "shift-k": "editor::MoveLineUp",
-    },
+      "shift-k": "editor::MoveLineUp"
+    }
   },
   // Center the cursor on the screen when scrolling and find all references
   {
@@ -210,28 +211,28 @@
       "n": ["workspace::SendKeystrokes", "n z z z v"],
       "shift-n": ["workspace::SendKeystrokes", "shift-n z z z v"],
       "shift-g": ["workspace::SendKeystrokes", "shift-g z z"],
-      "g r": "editor::FindAllReferences",
-    },
+      "g r": "editor::FindAllReferences"
+    }
   },
   {
     "context": "vim_operator == d",
     "bindings": {
       "o": "editor::ExpandAllDiffHunks",
-      "r": "git::Restore",
-    },
+      "r": "git::Restore"
+    }
   },
   {
     "context": "vim_mode == normal || vim_mode == visual",
     "bindings": {
       "s": "vim::PushSneak",
-      "S": "vim::PushSneakBackward",
-    },
+      "S": "vim::PushSneakBackward"
+    }
   },
   {
     "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
     "bindings": {
-      "b": "vim::AnyBrackets",
-    },
+      "b": "vim::AnyBrackets"
+    }
   },
   {
     "context": "SettingsWindow",
